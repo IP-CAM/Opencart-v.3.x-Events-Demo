@@ -4,12 +4,12 @@ class ControllerExtensionModuleExampleEventExtension extends Controller {
 	{
 		$this->load->model('setting/event');
 		$this->model_setting_event->addEvent(
-			'example_event_extension_menu',
+			'example_event_extension',
 			'admin/view/common/column_left/before',
 			'extension/module/example_event_extension/addMenu'
 		);
 		$this->model_setting_event->addEvent(
-			'example_event_extension_script',
+			'example_event_extension',
 			'admin/view/common/header/before',
 			'extension/module/example_event_extension/addScript'
 		);
@@ -18,8 +18,7 @@ class ControllerExtensionModuleExampleEventExtension extends Controller {
 	public function uninstall()
 	{
 		$this->load->model('setting/event');
-		$this->model_setting_event->deleteEventByCode('example_event_extension_menu');
-		$this->model_setting_event->deleteEventByCode('example_event_extension_script');
+		$this->model_setting_event->deleteEventByCode('example_event_extension');
 	}
 
 	public function addMenu($eventRoute, &$data)
